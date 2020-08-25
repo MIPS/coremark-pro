@@ -104,7 +104,7 @@ run: $(RUN_DEPS)
 	@if ( [ "$(WLD_RUN_FLAGS)" != "$(RUN_FLAGS)" ] || [ "$(WLD_CMD_FLAGS)" != "" ] )  ; then echo "Overrides for $(IMAGE):" >> $(LOG_PROGRESS); fi
 	@if [ "$(WLD_RUN_FLAGS)" != "$(RUN_FLAGS)" ] ; then echo "RUN_FLAGS=$(RUN_FLAGS)" >> $(LOG_PROGRESS); fi
 	@if [ "$(WLD_CMD_FLAGS)" != "" ] ; then echo "WLD_CMD_FLAGS=$(WLD_CMD_FLAGS)" >> $(LOG_PROGRESS); fi
-	$(WLD_RUN) $(WLD_RUN_FLAGS) $(IMAGE_NAME) $(CMD_SEP) $(CERT_CMD) $(XCMD) $(WLD_CMD_FLAGS) > $(DIR_LOG)/$(MYNAME).run.log 2>&1
+	$(WLD_RUN) $(WLD_RUN_FLAGS) -bbvout ${MYNAME}.bbv $(IMAGE_NAME) $(CMD_SEP) $(CERT_CMD) $(XCMD) $(WLD_CMD_FLAGS) > $(DIR_LOG)/$(MYNAME).run.log 2>&1
 	$(SIZE) $(SIZE_FLAGS) $(IMAGE_NAME) >  $(DIR_LOG)/$(MYNAME).size.log 
 
 #Target: results
