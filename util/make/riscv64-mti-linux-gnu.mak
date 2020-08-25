@@ -14,7 +14,7 @@
 
 # Tools Root Directory
 # This example uses a cross compiler built with crosstool targeting x86 linux.
-#TOOLS	= 
+TOOLS	= $(RISCV)
 TPREF = riscv64-mti-linux-gnu-
 # And this shows compiling to a big endian mips linux
 # TOOLS	= /opt/crosstool/gcc-3.3.6-glibc-2.3.2/mips-unknown-linux-gnu
